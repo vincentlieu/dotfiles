@@ -17,9 +17,10 @@ echo "Turning off analytics..."
 brew analytics off
 export HOMEBREW_NO_ANALYTICS=1
 
-echo "Installing Homebrew packages..."
+echo "Installing packages..."
 
 packages=(
+    git               # Keep git updated with homebrew
     nvm               # Node version manager
     pyenv             # Python version manager
     heroku            # Heroku CLI
@@ -30,3 +31,22 @@ packages=(
 for i in "${packages[@]}"; do
     brew install $i
 done
+
+# config nvm to mount when running node or nvm command
+
+# install node via nvm
+
+# install python via pyenv
+
+echo "Installing casks..."
+
+casks=(
+    # add casks
+)
+
+for i in "${casks[@]}"; do
+    brew install $i
+done
+
+echo "Cleaning up..."
+brew cleanup
