@@ -3,6 +3,6 @@
 # Usage
 
 ```
-$ git clone https://github.com/vincentlieu/dotfiles.git ~dotfiles
+$ git clone https://github.com/vincentlieu/dotfiles.git ~/dotfiles
 $ cd && ./install.sh
 ```
