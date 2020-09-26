@@ -1,8 +1,10 @@
 # vincentlieu dotfiles
 
-# Usage
+🏃‍♂️💨 accelerate setting up your new workstation.
 
-```bash
+## Usage
+
+```sh
 $ git clone https://github.com/vincentlieu/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles && ./install.sh
 ```
