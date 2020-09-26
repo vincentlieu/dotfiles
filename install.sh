@@ -1,15 +1,14 @@
 # Check whether x-code-select is installed
-echo "Checking x-code-select installation..."
-which -s brew
+echo "Checking xcode-select installation..."
+which -s xcode-select
 if [ $? != 0 ]; then
-    echo "x-code-select not found. Prompting x-code-select installer..."
+    echo "xcode-select not found. Prompting xcode-select installer..."
     xcode-select --install
-    echo "\nRerun this script after installing x-code-select.\n"
+    echo "\nRerun this script after installing xcode-select.\n"
     exit
 else
-    echo "x-code-select already installed."
+    echo "xcode-select already installed."
 fi
-
 
 echo "Installing dotfiles..."
 
@@ -17,67 +16,67 @@ echo "Installing dotfiles..."
 which -s brew
 if [ $? != 0 ]; then
     echo "Homebrew not found. Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
     echo "Homebrew already installed. Updating..."
-    brew update
-    brew upgrade
+    # brew update
+    # brew upgrade
 fi
 
-echo "Turning off analytics..."
-brew analytics off
-export HOMEBREW_NO_ANALYTICS=1
+# echo "Turning off analytics..."
+# brew analytics off
+# export HOMEBREW_NO_ANALYTICS=1
 
-echo "Installing packages..."
+# echo "Installing packages..."
 
-# Add or remove homebrew packages to install
-packages=(
-    git               # Keep git updated with homebrew
-    nvm               # Node version manager
-    pyenv             # Python version manager
-    heroku            # Heroku CLI
-    postgres          # Postgres DB
-    mongodb-community # MongoDB
-)
+# # Add or remove homebrew packages to install
+# packages=(
+#     git               # Keep git updated with homebrew
+#     nvm               # Node version manager
+#     pyenv             # Python version manager
+#     heroku            # Heroku CLI
+#     postgres          # Postgres DB
+#     mongodb-community # MongoDB
+# )
 
-for i in "${packages[@]}"; do
-    brew install $i
-done
+# for i in "${packages[@]}"; do
+#     brew install $i
+# done
 
-# config nvm to mount when running node or nvm command
+# # config nvm to mount when running node or nvm command
 
-# install node via nvm
+# # install node via nvm
 
-# install python via pyenv
+# # install python via pyenv
 
-echo "Installing casks..."
+# echo "Installing casks..."
 
-# Add or remove homebrew casks to install
-casks=(
-    google-chrome      # Web browser
-    firefox            # Web browser
-    visual-studio-code # Code editor
-    typora             # Markdown editor
-    slack              # Team communicate platform
-    alfred             # Application launcher and productivity
-    vlc                # Video player
-    the-unarchiver     # Archieve opener
-    postman            # RESTful API tool
-    iterm2             # Better terminal
-    notion             # Note taking application
-    spotify            # Music client
-    docker             # Docker client
-    # mongodb-compass      # Mongodb client
-    # adobe-acrobat-reader # PDF reader
-    # pock                 # Macbook pro touchbar application
-    # balsamiq-wireframes  # Wireframing application
-    # one-switch           # System and utility switches all in one place
+# # Add or remove homebrew casks to install
+# casks=(
+#     google-chrome      # Web browser
+#     firefox            # Web browser
+#     visual-studio-code # Code editor
+#     typora             # Markdown editor
+#     slack              # Team communicate platform
+#     alfred             # Application launcher and productivity
+#     vlc                # Video player
+#     the-unarchiver     # Archieve opener
+#     postman            # RESTful API tool
+#     iterm2             # Better terminal
+#     notion             # Note taking application
+#     spotify            # Music client
+#     docker             # Docker client
+#     # mongodb-compass      # Mongodb client
+#     # adobe-acrobat-reader # PDF reader
+#     # pock                 # Macbook pro touchbar application
+#     # balsamiq-wireframes  # Wireframing application
+#     # one-switch           # System and utility switches all in one place
 
-)
+# )
 
-for i in "${casks[@]}"; do
-    brew cask install $i
-done
+# for i in "${casks[@]}"; do
+#     brew cask install $i
+# done
 
-echo "Cleaning up..."
-brew cleanup
+# echo "Cleaning up..."
+# brew cleanup
