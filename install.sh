@@ -1,8 +1,6 @@
 echo "Installing dotfiles..."
 
-## Install Homebrew and packages
-# $? is used to find the return value of the last executed command. 0 is success.
-
+# Install Homebrew
 which -s brew
 if [ $? != 0 ]; then
     echo "Homebrew not found. Installing Homebrew..."
@@ -19,6 +17,7 @@ export HOMEBREW_NO_ANALYTICS=1
 
 echo "Installing packages..."
 
+# Add or remove homebrew packages to install
 packages=(
     git               # Keep git updated with homebrew
     nvm               # Node version manager
@@ -40,12 +39,31 @@ done
 
 echo "Installing casks..."
 
+# Add or remove homebrew casks to install
 casks=(
-    # add casks
+    google-chrome      # Web browser
+    firefox            # Web browser
+    visual-studio-code # Code editor
+    typora             # Markdown editor
+    slack              # Team communicate platform
+    alfred             # Application launcher and productivity
+    vlc                # Video player
+    the-unarchiver     # Archieve opener
+    postman            # RESTful API tool
+    iterm2             # Better terminal
+    notion             # Note taking application
+    spotify            # Music client
+    docker             # Docker client
+    # mongodb-compass      # Mongodb client
+    # adobe-acrobat-reader # PDF reader
+    # pock                 # Macbook pro touchbar application
+    # balsamiq-wireframes  # Wireframing application
+    # one-switch           # System and utility switches all in one place
+
 )
 
 for i in "${casks[@]}"; do
-    brew install $i
+    brew cask install $i
 done
 
 echo "Cleaning up..."
