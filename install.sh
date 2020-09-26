@@ -1,3 +1,16 @@
+# Check whether x-code-select is installed
+echo "Checking x-code-select installation..."
+which -s brew
+if [ $? != 0 ]; then
+    echo "x-code-select not found. Prompting x-code-select installer..."
+    xcode-select --install
+    echo "\nRerun this script after installing x-code-select.\n"
+    exit
+else
+    echo "x-code-select already installed."
+fi
+
+
 echo "Installing dotfiles..."
 
 # Install Homebrew
