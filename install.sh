@@ -1,10 +1,11 @@
+#! /bin/bash
+
 echo "Installing dotfiles..."
 
 # Install Homebrew
-which -s brew
-if [ $? != 0 ]; then
+if ! [ -x "$(which brew)" ]; then
     echo "Homebrew not found. Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
     echo "Homebrew already installed. Updating..."
     brew update
@@ -20,12 +21,12 @@ echo "Installing packages..."
 # Add or remove third-party formulae from github as homebrew taps
 taps=(
     # user/repo
-    mongodb/brew    # Add mongoDB
-    heroku/brew     # Add Heroku
+    mongodb/brew # Add mongoDB
+    heroku/brew  # Add Heroku
 )
 
 for i in "${taps[@]}"; do
-    brew tap $i 
+    brew tap "$i"
 done
 
 # Add or remove homebrew formulae to install
@@ -39,9 +40,8 @@ formulae=(
 )
 
 for i in "${formulae[@]}"; do
-    brew install $i
+    brew install "$i"
 done
-
 
 echo "Installing casks..."
 
@@ -68,7 +68,7 @@ casks=(
 )
 
 for i in "${casks[@]}"; do
-    brew cask install $i
+    brew cask install "$i"
 done
 
 echo "Cleaning up..."
