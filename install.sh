@@ -5,7 +5,7 @@ echo "Installing dotfiles..."
 # Install Homebrew
 if ! [ -x "$(which brew)" ]; then
     echo "Homebrew not found. Installing Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
     echo "Homebrew already installed. Updating..."
     brew update
