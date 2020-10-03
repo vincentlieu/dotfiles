@@ -7,7 +7,7 @@ echo "Creating Symlink to oh-my-zsh/custom"
 ln -fs $(pwd)/.oh-my-zsh/custom ~/.oh-my-zsh/
 
 echo "Removing .zshrc from oh-my-zsh installation"
-rm ~/.zshrc
+# rm ~/.zshrc
 
 echo "Update submodules"
 git submodule init && git submodule update
