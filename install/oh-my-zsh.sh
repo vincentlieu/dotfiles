@@ -10,6 +10,3 @@ ln -fs $(pwd)/oh-my-zsh/custom ~/.oh-my-zsh/
 
 echo "Removing .zshrc from oh-my-zsh installation"
 # rm ~/.zshrc
-
-echo "Update submodules"
-git submodule update --init --recursive
