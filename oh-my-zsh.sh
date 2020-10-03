@@ -6,7 +6,7 @@ rm -rf ~/.oh-my-zsh/custom
 
 # Create symlink to .oh-my-zsh/custom
 echo "Creating Symlink to oh-my-zsh/custom"
-ln -fs ./oh-my-zsh/custom ~/.oh-my-zsh/
+ln -fs $(pwd)/oh-my-zsh/custom ~/.oh-my-zsh/
 
 echo "Removing .zshrc from oh-my-zsh installation"
 # rm ~/.zshrc
