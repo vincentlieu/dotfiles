@@ -16,5 +16,5 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
-
+eval "$(fnm env --multi --use-on-cd)"
 source $ZSH/oh-my-zsh.sh
