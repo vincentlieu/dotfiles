@@ -28,8 +28,8 @@ done
 # Add or remove homebrew formulae to install
 formulae=(
     git               # Keep git updated with homebrew
-    nvm               # Node version manager
     pyenv             # Python version manager
+    Schniz/tap/fnm    # Add Fast Node Manager
     postgres          # Postgres DB
     heroku            # Heroku CLI
     mongodb-community # MongoDB latest production release
