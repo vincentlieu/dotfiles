@@ -1,0 +1,24 @@
+[user]
+name = Vincent Lieu
+email = v.lieu93@gmail.com
+[color]
+ui = true
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+[pager]
+branch = false
+[url "ssh://git@github.com/"]
+insteadOf = https://github.com/
+[core]
+excludesfile = ~/.gitignore_global
+[merge]
+tool = vscode
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+[diff]
+tool = vscode
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE

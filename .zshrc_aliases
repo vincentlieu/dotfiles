@@ -1,0 +1,9 @@
+alias reload!='source ~/.zshrc'
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+alias python='python3'
+alias chrome='open -a "Google Chrome"'
+alias spotify='open -a spotify'
+alias typora='open -a typora'
+alias gco='git checkout'
+

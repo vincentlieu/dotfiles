@@ -1,0 +1,39 @@
+# 'brew tap'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/tap"
+
+# Set argument for all 'brew cask install' command
+cask_args appdir: "~/Applications", require_sha: true
+
+# 'brew install'
+brew "git"
+brew "go"
+brew "gotop"
+brew "kubernetes-cli"
+brew "neofetch"
+brew "nvm"
+brew "postgresql"
+brew "pyenv"
+
+# 'brew casks install'
+cask "1password"
+cask "1password-cli"
+cask "alfred"
+cask "appcleaner"
+cask "docker"
+cask "firefox"
+cask "google-chrome"
+cask "iterm2"
+cask "kap"
+cask "notion"
+cask "pgadmin4"
+cask "postman"
+cask "slack"
+cask "spotify"
+cask "typora"
+cask "visual-studio-code"
+cask "vlc"

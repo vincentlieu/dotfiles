@@ -1,0 +1,11 @@
+# Mac
+.DS_Store
+*.swp
+*~.nib
+
+# Thumbnails
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini

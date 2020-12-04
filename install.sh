@@ -1,10 +1,15 @@
 #! /bin/bash
 
-echo "Installing dotfiles..."
+if [ "${PWD##*/}" != "dotfiles" ]; then
+    echo "[ WARN ] Run this script from inside the dotfiles directory"
+    exit
+fi
 
-echo "Updating submodules..."
+echo "[ INFO ] Updating submodules before installation begins"
 git submodule update --init --recursive
+
+echo "[ INFO ] Starting installation"
 
 source $(pwd)/install/brew.sh
 source $(pwd)/install/fonts.sh
-source $(pwd)/install/oh-my-zsh.sh
+source $(pwd)/install/terminal.sh
