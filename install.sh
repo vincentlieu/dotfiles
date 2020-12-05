@@ -13,3 +13,4 @@ echo "[ INFO ] Starting installation"
 source $(pwd)/install/brew.sh
 source $(pwd)/install/fonts.sh
 source $(pwd)/install/terminal.sh
+source $(pwd)/install/links.sh
