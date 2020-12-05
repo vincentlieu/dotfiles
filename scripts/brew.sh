@@ -1,5 +1,10 @@
 #! /bin/bash
 
+if [ "${PWD##*/}" != "dotfiles" ]; then
+    echo "[ WARN ] Run this script from inside the dotfiles directory"
+    exit
+fi
+
 # Install Homebrew
 if ! [ -x "$(which brew)" ]; then
     echo "[ INFO ] Homebrew not found. Installing Homebrew..."

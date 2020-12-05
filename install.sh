@@ -10,7 +10,7 @@ git submodule update --init --recursive
 
 echo "[ INFO ] Starting installation"
 
-source $(pwd)/install/brew.sh
-source $(pwd)/install/fonts.sh
-source $(pwd)/install/terminal.sh
-source $(pwd)/install/links.sh
+source $(pwd)/scripts/brew.sh
+source $(pwd)/scripts/fonts.sh
+source $(pwd)/scripts/terminal.sh
+source $(pwd)/scripts/links.sh
