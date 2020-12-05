@@ -15,7 +15,7 @@ brew analytics off
 export HOMEBREW_NO_ANALYTICS=1
 
 echo "[ INFO ] Installing the good stuff"
-brew bundle --file --verbose $(pwd)/Brewfile
+brew bundle --file $(pwd)/Brewfile --verbose
 
 echo "[ INFO ] Cleaning up"
 brew cleanup
