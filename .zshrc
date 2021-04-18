@@ -26,7 +26,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 plugins=(
     zsh-z
     zsh-autosuggestions
-    fast-syntax-highlighting
+
     zsh-completions
 )
 

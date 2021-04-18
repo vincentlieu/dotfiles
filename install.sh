@@ -19,7 +19,7 @@ echo "[ INFO ] Configuring .nvm"
 mkdir ~/.nvm
 ln -s $(pwd)/default-packages ~/.nvm/default-packages
 
-echo "[ INFO ] Applying fast-syntax-highlighting theme"
-fast-theme $(pwd)/fsh-zsh.ini
+# echo "[ INFO ] Applying fast-syntax-highlighting theme"
+# fast-theme $(pwd)/fsh-zsh.ini
 
 echo "[ INFO ] Finished installation!"
