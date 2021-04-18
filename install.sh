@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [ "${PWD##*/}" != "dotfiles" ]; then
+if [ "${PWD##*/}" != ".dotfiles" ]; then
     echo "[ WARN ] Run this script from inside the dotfiles directory"
     exit
 fi
