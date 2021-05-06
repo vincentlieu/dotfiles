@@ -6,10 +6,16 @@ if [ "${PWD##*/}" != ".dotfiles" ]; then
 fi
 
 echo "[ INFO ] Creating symlink"
-rm ~/.zshrc
-ln -s $(pwd)/.zshrc ~/.zshrc
-ln -s $(pwd)/.zshrc_aliases ~/.zshrc_aliases
-ln -s $(pwd)/.spaceship_config ~/.spaceship_config
-ln -s $(pwd)/.gitconfig ~/.gitconfig
-ln -s $(pwd)/.gitconfig_global ~/.gitconfig_global
-ln -s $(pwd)/.vimrc ~/.vimrc
+cwd=$(pwd)
+cd $cwd/config
+
+FILES=("$(find . -name ".*" -maxdepth 1 -type f -exec basename {} \;)")
+
+for f in ${FILES}; do
+    echo "Creating symlink: $f --> $HOME"
+    ln -fs $(pwd)/$f $HOME/$f
+done
+
+echo "[ INFO ] Finished generating symlinks"
+
+cd $cwd

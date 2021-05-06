@@ -11,4 +11,5 @@ DIR="$cwd/fonts"
 for f in "$DIR"/*; do
     cp "$f" "/Library/Fonts"
 done
+
 cd $cwd

@@ -37,5 +37,5 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zshrc_aliases
+source ~/.aliases
 source ~/.spaceship_config
