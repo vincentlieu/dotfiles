@@ -9,13 +9,21 @@ echo "[ INFO ] Creating symlink"
 cwd=$(pwd)
 cd $cwd/config
 
-FILES=("$(find . -name ".*" -maxdepth 1 -type f -exec basename {} \;)")
+DOTFILES=("$(find . -name ".*" -maxdepth 1 -type f -exec basename {} \;)")
 
-for f in ${FILES}; do
-    echo "Creating symlink: $f --> $HOME"
-    ln -fs $(pwd)/$f $HOME/$f
+for file in ${DOTFILES}; do
+    echo "Creating symlink: $file --> $HOME"
+    ln -fs $(pwd)/$file $HOME/$file
+done
+
+cd $cwd
+cd $cwd/omz/plugins
+OMZ_PLUGINS_DIR="$HOME/.oh-my-zsh/custom/plugins"
+PLUGINS=("$(ls)")
+
+for plugin in ${PLUGINS}; do
+    echo "Creating symlink: $plugin --> $OMZ_PLUGINS_DIR"
+    ln -fs $(pwd)/$plugin $OMZ_PLUGINS_DIR
 done
 
 echo "[ INFO ] Finished generating symlinks"
-
-cd $cwd
