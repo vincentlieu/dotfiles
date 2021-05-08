@@ -3,7 +3,7 @@ export ZSH="/Users/vincentlieu/.oh-my-zsh"
 
 ### OH-MY-ZSH CONFIGURATION ###
 DISABLE_MAGIC_FUNCTIONS="true"
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### ENVIRONMENT VARIABLES ###
 

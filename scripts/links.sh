@@ -26,4 +26,14 @@ for plugin in ${PLUGINS}; do
     ln -fs $(pwd)/$plugin $OMZ_PLUGINS_DIR
 done
 
+cd $cwd
+cd $cwd/omz/themes
+OMZ_THEMES_DIR="$HOME/.oh-my-zsh/custom/themes"
+THEMES=("$(ls)")
+
+for theme in ${THEMES}; do
+    echo "Creating symlink: $plugin --> $OMZ_THEMES_DIR"
+    ln -fs $(pwd)/$theme $OMZ_THEMES_DIR
+done
+
 echo "[ INFO ] Finished generating symlinks"
