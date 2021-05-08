@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ### PATH TO OH-MY-ZSH INSTALLATION ###
 export ZSH="/Users/vincentlieu/.oh-my-zsh"
 
@@ -9,7 +16,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 # PYENV
 export PYENV_ROOT="$HOME/.pyenv"
@@ -39,3 +46,6 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.spaceship_config
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
