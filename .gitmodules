@@ -1,16 +1,12 @@
-
 [submodule "omz/plugins/zsh-autosuggestions"]
-	path = omz/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
+path = omz/plugins/zsh-autosuggestions
+url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "omz/plugins/zsh-completions"]
-	path = omz/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions
+path = omz/plugins/zsh-completions
+url = https://github.com/zsh-users/zsh-completions
 [submodule "omz/plugins/zsh-z"]
-	path = omz/plugins/zsh-z
-	url = https://github.com/agkozak/zsh-z
+path = omz/plugins/zsh-z
+url = https://github.com/agkozak/zsh-z
 [submodule "omz/plugins/zsh-syntax-highlighting"]
-	path = omz/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "omz/themes/spaceship-prompt"]
-	path = omz/themes/spaceship-prompt
-	url = https://github.com/denysdovhan/spaceship-prompt
+path = omz/plugins/zsh-syntax-highlighting
+url = https://github.com/zsh-users/zsh-syntax-highlighting
