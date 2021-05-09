@@ -10,13 +10,31 @@ git submodule update --init --recursive
 
 echo "[ INFO ] Starting installation"
 
+echo "[ INFO ] Installing omz"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+echo "[ INFO ] Configuring iterm2 settings"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$(pwd)/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
 source $(pwd)/scripts/brew.sh
 source $(pwd)/scripts/fonts.sh
-source $(pwd)/scripts/terminal.sh
 source $(pwd)/scripts/links.sh
 
 echo "[ INFO ] Configuring .nvm"
-mkdir ~/.nvm
-ln -s $(pwd)/default-packages ~/.nvm/default-packages
+
+BREW_NVM_BIN="$(brew --prefix nvm)"
+NVM_DIR="${HOME}/.nvm/"
+
+if [ -x "$BREW_NVM_BIN" ] && ! [ -d "$NVM_DIR" ]; then
+    echo "[ INFO ] Creating .nvm dir --> $NVM_DIR"
+    mkdir ${HOME}/.nvm
+fi
+
+if [ -d "$NVM_DIR" ]; then
+    echo "Creating symlink: default-packages --> $NVM_DIR"
+    ln -fs $(pwd)/misc/default-packages $NVM_DIR
+    exit
+fi
 
 echo "[ INFO ] Finished installation!"

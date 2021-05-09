@@ -5,11 +5,16 @@ if [ "${PWD##*/}" != ".dotfiles" ]; then
     exit
 fi
 
+echo "[ INFO ] Installing hacked nerd fonts"
+
 cwd=$(pwd)
 cd $cwd/fonts
 DIR="$cwd/fonts"
+FONT_DIR="/Library/Fonts"
+
 for f in "$DIR"/*; do
-    cp "$f" "/Library/Fonts"
+    echo "Copying: $f --> $FONT_DIR"
+    cp "$f" "$FONT_DIR"
 done
 
 cd $cwd

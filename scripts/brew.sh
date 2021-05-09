@@ -5,7 +5,8 @@ if [ "${PWD##*/}" != ".dotfiles" ]; then
     exit
 fi
 
-# Install Homebrew
+echo "[ INFO ] Configuring homebrew - install and/or update packages"
+
 if ! [ -x "$(which brew)" ]; then
     echo "[ INFO ] Homebrew not found. Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
