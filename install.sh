@@ -10,8 +10,11 @@ git submodule update --init --recursive
 
 echo "[ INFO ] Starting installation"
 
-echo "[ INFO ] Installing omz"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+if ! [ "$ZSH" ]; then
+    echo "[ INFO ] OMZ not found. Installing omz..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    exit
+fi
 
 echo "[ INFO ] Configuring iterm2 settings"
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$(pwd)/iterm2"
