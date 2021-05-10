@@ -1,11 +1,9 @@
-alias chrome='open -a "Google Chrome"'
-alias gaa='git add .'
-alias gcm='git commit -m'
-alias gco='git checkout'
-alias gpm='gco master && git pull'
-alias python='python3'
-alias reload!='source ~/.zshrc'
-alias spotify='open -a spotify'
-alias typora='open -a typora'
-
-
+alias chrome="open -a 'Google Chrome'"
+alias gaa="git add ."
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gpm="gco master && git pull"
+alias python="python3"
+alias reload!="source ~/.zshrc"
+alias spotify="open -a spotify"
+alias typora="open -a typora"
