@@ -23,6 +23,7 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 source $(pwd)/scripts/brew.sh
 source $(pwd)/scripts/fonts.sh
 source $(pwd)/scripts/links.sh
+source $(pwd)/scripts/vscode.sh
 
 echo "[ INFO ] Configuring .nvm"
 
