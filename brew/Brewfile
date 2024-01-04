@@ -1,0 +1,30 @@
+# Set argument for all 'brew cask install' command
+cask_args appdir: "/Applications"
+
+# taps
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+
+# formulae
+brew "bat"
+brew "git"
+brew "go"
+brew "kubernetes-cli"
+brew "nvm"
+brew "postgresql"
+
+# casks
+cask "1password"
+cask "alt-tab"
+cask "docker"
+cask "firefox"
+cask "google-chrome"
+cask "iterm2"
+cask "kap"
+cask "pgadmin4"
+cask "postman"
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
