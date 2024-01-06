@@ -1,0 +1,12 @@
+[user]
+	name = Vincent Lieu
+	email = 58590087+vincentlieu@users.noreply.github.com
+	username = vincentlieu
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[color]
+	ui = true
+[pull]
+	rebase = false
+[core]
+	excludesfile = ~/.gitignore_global
