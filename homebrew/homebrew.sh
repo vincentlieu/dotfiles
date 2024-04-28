@@ -52,11 +52,12 @@ function main() {
         install_homebrew
     else
         update_homebrew
-        upgrade_packages
-        install_packages
-        brew analytics off
-        brew cleanup
     fi
+
+    install_packages
+    upgrade_packages
+    brew analytics off
+    brew cleanup
 }
 
 main
