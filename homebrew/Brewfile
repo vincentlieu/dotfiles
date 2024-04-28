@@ -12,6 +12,7 @@ brew "asdf"
 brew "bat"
 brew "git"
 brew "go"
+brew "jq"
 brew "kubernetes-cli"
 brew "postgresql"
 
