@@ -10,3 +10,5 @@
 	rebase = false
 [core]
 	excludesfile = ~/.gitignore_global
+[pager]
+	branch = false
