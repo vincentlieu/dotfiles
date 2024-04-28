@@ -1,22 +1,62 @@
 #! /bin/bash
 
-echo "[ INFO ] Configuring homebrew - install and/or update packages"
+BREWFILE=$(pwd)/Brewfile
 
-if ! [ -x "$(which brew)" ]; then
-    echo "[ INFO ] Homebrew not found. Installing Homebrew..."
+# Install Homebrew.
+function install_homebrew() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    echo "[ INFO ] Homebrew already installed. Updating..."
+    return
+}
+
+# Fetch the newest version of Homebrew and all formulae.
+function update_homebrew() {
+    if ! command -v brew update &> /dev/null; then
+        echo "Cannot run 'brew update'"
+        exit
+    fi
+
     brew update
+    return
+}
+
+# Upgrade outdated casks and outdated, unpinned formulae.
+function upgrade_packages() {
+    if ! command -v brew upgrade &> /dev/null; then
+        echo "Cannot run 'brew upgrade'"
+        exit
+    fi
+
     brew upgrade
-fi
+    return
+}
 
-echo "[ INFO ] Turning off homebrew analytics"
-brew analytics off
-export HOMEBREW_NO_ANALYTICS=1
+# Install Homebrew packages.
+function install_packages() {
+    if ! command -v brew bundle &> /dev/null; then
+        echo "Cannot run 'brew bundle'"
+        exit
+    fi
 
-echo "[ INFO ] Installing..."
-brew bundle --file $(pwd)/Brewfile --verbose
+    if test -f "$BREWFILE"; then
+        brew bundle --file "$(pwd)/Brewfile" --verbose
+    else
+        echo "Unable to find Brewfile. Skipping package installation."
+        echo "Path: $BREWFILE"
+    fi
+    return
+}
 
-echo "[ INFO ] Cleaning up"
-brew cleanup
+function main() {
+    if ! command -v brew &> /dev/null; then
+        echo "Installing Homebrew..."
+        install_homebrew
+    else
+        update_homebrew
+        upgrade_packages
+        install_packages
+        brew analytics off
+        brew cleanup
+    fi
+}
+
+main
