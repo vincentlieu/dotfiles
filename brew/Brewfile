@@ -8,11 +8,11 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 
 # formulae
+brew "asdf"
 brew "bat"
 brew "git"
 brew "go"
 brew "kubernetes-cli"
-brew "nvm"
 brew "postgresql"
 
 # casks
