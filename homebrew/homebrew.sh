@@ -41,7 +41,7 @@ function install_packages() {
         brew bundle --file "$(pwd)/Brewfile" --verbose
     else
         echo "Unable to find Brewfile. Skipping package installation."
-        echo "Path: $BREWFILE"
+        echo "PATH: $BREWFILE"
     fi
     return
 }
