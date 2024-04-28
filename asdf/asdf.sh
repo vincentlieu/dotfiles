@@ -34,6 +34,11 @@ function set_asdfrc() {
         echo "Could not find .asdfrc file to symlink."
         echo "PATH: $asdfrc_file_path"
     else
+        if test -h "$HOME/$asdfrc_file_path"; then
+            echo ".asdfrc already symlinked."
+            return
+        fi
+
         echo "Removing any references to .asdfrc"
         rm "$HOME/$asdfrc_file_name"
         
@@ -68,11 +73,14 @@ function symlink_default_nodejs_packages() {
         echo "Could not find default-npm-packages file to symlink."
         echo "PATH: $asdf_default_npm_file_path"
     else
-        if [[ -e "$HOME/$asdf_default_npm_file_name" || -L "$HOME/$asdf_default_npm_file_name" ]]; then
+        if test -h "$HOME/$asdf_default_npm_file_name"; then
             echo "asdf default-npm-packages already symlinked."
             return
         fi
 
+        echo "Removing any references to .default-npm-packages"
+        rm "$HOME/$asdf_default_npm_file_name"
+        
         echo "Symlinking asdf default-npm-packages"
         ln -s "$asdf_default_npm_file_path" "$HOME"
     fi
@@ -103,10 +111,14 @@ function symlink_default_python_packages() {
         echo "Could not find default-python-packages file to symlink."
         echo "PATH: $asdf_default_python_file_path"
     else
-        if [[ -e "$HOME/$asdf_default_python_file_name" || -L "$HOME/$asdf_default_python_file_name" ]]; then
+        if test -h "$HOME/$asdf_default_python_file_name"; then
             echo "asdf default-python-packages already symlinked."
             return
         fi
+        
+        echo "Removing any references to .default-python-packages"
+        rm "$HOME/$asdf_default_python_file_name"
+
         echo "Symlinking asdf default-python-packages"
         ln -s "$asdf_default_python_file_path" "$HOME"
     fi
@@ -146,7 +158,6 @@ function setup_asdf_plugins() {
            ;;
         esac
     done
-
 
     return
 }
