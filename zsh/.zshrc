@@ -1,6 +1,6 @@
 # Only source p10k if it exists.
 if [ -f $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
-    source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+  source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -17,7 +17,7 @@ command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
 
 # Only source .zsh_aliases if it exists.
 if [ -f "${HOME}/.zsh_aliases" ]; then
-    source "${HOME}/.zsh_aliases"
+  source "${HOME}/.zsh_aliases"
 fi
 
 if [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
