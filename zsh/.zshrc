@@ -19,3 +19,7 @@ command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
 if [ -f "${HOME}/.zsh_aliases" ]; then
     source "${HOME}/.zsh_aliases"
 fi
+
+if [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
