@@ -9,6 +9,7 @@ tap "homebrew/services"
 
 # formulae
 brew "asdf"
+brew "zsh-autocomplete"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "bat"
