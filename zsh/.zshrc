@@ -14,3 +14,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
+
+# Only source .zsh_aliases if it exists.
+if [ -f "${HOME}/.zsh_aliases" ]; then
+    source "${HOME}/.zsh_aliases"
+fi
