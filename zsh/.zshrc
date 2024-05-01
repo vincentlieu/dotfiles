@@ -5,10 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
+if [ -f "${HOME}/.p10k.zsh" ]; then
+ source "${HOME}/.p10k.zsh"
+fi
 
 if [ -f "${HOME}/.zsh_aliases" ]; then
   source "${HOME}/.zsh_aliases"
@@ -40,3 +39,5 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
