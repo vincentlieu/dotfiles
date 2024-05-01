@@ -20,15 +20,25 @@ if [ -f "${HOME}/.zsh_aliases" ]; then
   source "${HOME}/.zsh_aliases"
 fi
 
-if [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
+  source $(brew --prefix asdf)/libexec/asdf.sh
 fi
 
-if [ -f $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
-  source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+if [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
-if [ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then
+  source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 fi
 
+if [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+  autoload -Uz compinit
+  compinit
+fi
