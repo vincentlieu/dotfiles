@@ -5,6 +5,12 @@ HOMEBREW_BUNDLE_FILE_GLOBAL=$HOME/.dotfiles/homebrew/Brewfile
 # Install Homebrew.
 function install_homebrew() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    if [[ $(uname -m) == 'arm64' ]]; then
+        echo "eval $(/opt/homebrew/bin/brew shellenv)" >> "$HOME/.zprofile"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi;
+
     return
 }
 
