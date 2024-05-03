@@ -9,10 +9,6 @@ if [ -e "${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme" ]; then
   source "${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme"
 fi
 
-if [ -e "${HOMEBREW_PREFIX}/asdf/libexec/asdf.sh" ]; then
-  source "${HOMEBREW_PREFIX}/asdf/libexec/asdf.sh"
-fi
-
 if [ -e "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
   source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
@@ -23,4 +19,8 @@ fi
 
 if [ -e "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
   source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
+
+if [ -e "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
