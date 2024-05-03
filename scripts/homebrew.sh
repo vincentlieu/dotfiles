@@ -1,6 +1,6 @@
 #! /bin/bash
 
-BREWFILE=$(pwd)/Brewfile
+HOMEBREW_BUNDLE_FILE_GLOBAL=$HOME/.dotfiles/homebrew/Brewfile
 
 # Install Homebrew.
 function install_homebrew() {
@@ -37,11 +37,11 @@ function install_packages() {
         exit
     fi
 
-    if test -f "$BREWFILE"; then
-        brew bundle --file "$(pwd)/Brewfile" --verbose
+    if [ -z "$HOMEBREW_BUNDLE_FILE_GLOBAL" ]; then
+        brew bundle --file "$HOMEBREW_BUNDLE_FILE_GLOBAL" --verbose
     else
         echo "Unable to find Brewfile. Skipping package installation."
-        echo "PATH: $BREWFILE"
+        echo "PATH: $HOMEBREW_BUNDLE_FILE_GLOBAL"
     fi
     return
 }
@@ -59,5 +59,3 @@ function main() {
     brew analytics off
     brew cleanup
 }
-
-main
