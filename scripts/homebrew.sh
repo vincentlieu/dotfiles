@@ -43,8 +43,8 @@ function install_packages() {
         exit
     fi
 
-    if [ -z "$HOMEBREW_BUNDLE_FILE_GLOBAL" ]; then
-        brew bundle --file "$HOMEBREW_BUNDLE_FILE_GLOBAL" --verbose
+    if [ -f "$HOMEBREW_BUNDLE_FILE_GLOBAL" ]; then
+        brew bundle --global --verbose
     else
         echo "Unable to find Brewfile. Skipping package installation."
         echo "PATH: $HOMEBREW_BUNDLE_FILE_GLOBAL"
@@ -65,3 +65,5 @@ function main() {
     brew analytics off
     brew cleanup
 }
+
+main

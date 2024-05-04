@@ -50,3 +50,5 @@ function get_asdf_plugins() {
 
     return
 }
+
+get_asdf_plugins

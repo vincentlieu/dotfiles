@@ -8,3 +8,5 @@ function symlink_dotfiles() {
         ln -fs "$filepath" "$HOME/$(basename "$filepath")"
     done
 }
+
+symlink_dotfiles
