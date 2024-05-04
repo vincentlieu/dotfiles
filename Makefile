@@ -13,7 +13,7 @@ bootstrap:
 	@echo "[ INFO ] Done!"
 
 scripts_permissions:
-	@echo "[ INFO ] Setting execute permissions..."
+	@echo "[ INFO ] Setting script execute permissions..."
 	@chmod +x $(ASDF_SCRIPT)
 	@chmod +x $(HOMEBREW_SCRIPT)
 	@chmod +x $(LINK_SCRIPT)
