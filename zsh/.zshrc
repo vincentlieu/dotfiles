@@ -1,6 +1,7 @@
 export DOTFILES="${HOME}/.dotfiles"
 export DOTFILES_ZSH="${DOTFILES}/zsh"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="${DOTFILES}/homebrew/Brewfile"
+export CLICOLOR=1
 
 if [ -e "${DOTFILES_ZSH}/config/sources.zsh" ]; then 
   source "${DOTFILES_ZSH}/config/sources.zsh"
