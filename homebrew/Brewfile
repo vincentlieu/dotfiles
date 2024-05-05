@@ -18,8 +18,10 @@ brew "git"
 brew "go"
 brew "jq"
 brew "kubernetes-cli"
+brew "neovim"
 brew "postgresql"
 brew "powerlevel10k"
+brew "rg"
 brew "zoxide"
 
 # casks
