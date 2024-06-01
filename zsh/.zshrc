@@ -17,12 +17,9 @@ fi
 
 if type brew &>/dev/null; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
-  if [ -e "$HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then
-    FPATH="$HOMEBREW_PREFIX/share/zsh-completions:${FPATH}"
-  fi
 fi
 
-autoload -Uz compinit
-compinit
+autoload -U compinit
+compinit -i
 
 command -v zoxide &> /dev/null && eval "$(zoxide init zsh)"
