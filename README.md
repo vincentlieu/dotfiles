@@ -24,7 +24,7 @@ To use these dotfiles on a new system:
     cd ~/.dotfiles
     make bootstrap
     ```
-    
+
     If you encounter script permission errors during the bootstrap process, run the following command to fix them:
 
     ```bash
