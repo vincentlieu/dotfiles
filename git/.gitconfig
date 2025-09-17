@@ -12,6 +12,12 @@
 	excludesfile = ~/.gitignore_global
 [pager]
 	branch = false
+[branch]
+	autosetupmerge = always
+[log]
+	abbrevCommit = true
+	decorate = short
+	date = relative
 [alias]
 	co = checkout
 	br = branch
