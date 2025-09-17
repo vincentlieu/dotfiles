@@ -10,6 +10,7 @@ tap "homebrew/services"
 # formulae
 brew "asdf"
 brew "bat"
+brew "gh"
 brew "git"
 brew "go"
 brew "jq"
