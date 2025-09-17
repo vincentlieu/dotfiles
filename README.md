@@ -31,6 +31,24 @@ To use these dotfiles on a new system:
     make scripts_permissions
     ```
 
+## Maintenance
+
+### Updating Tool Versions
+Keep your development tools up to date:
+
+```bash
+make update-tools-versions
+```
+
+This will check for the latest stable versions of Node.js and Python and update your `.tool-versions` file.
+
+### Cleaning Up
+Remove broken symlinks from your home directory:
+
+```bash
+make clean
+```
+
 ## Contributing
 
 Feel free to fork this repository and customize it to suit your own preferences. Pull requests and suggestions for improvements are always welcome!
