@@ -3,8 +3,9 @@ ASDF_SCRIPT := "${SCRIPTS_DIR}/asdf.sh"
 HOMEBREW_SCRIPT := "${SCRIPTS_DIR}/homebrew.sh"
 LINK_SCRIPT := "${SCRIPTS_DIR}/link.sh"
 UPDATE_VERSIONS_SCRIPT := "${SCRIPTS_DIR}/update-tools-versions.sh"
+BACKUP_SCRIPT := "${SCRIPTS_DIR}/backup.sh"
 
-.PHONY: bootstrap scripts_permissions link homebrew asdf update-tools-versions clean
+.PHONY: bootstrap scripts_permissions link homebrew asdf update-tools-versions clean backup-list backup-restore backup-clean
 
 bootstrap:
 	@echo "[ INFO ] Bootstrapping..."
