@@ -114,7 +114,7 @@ function clean_old_backups() {
     
     # Get unique base filenames
     local base_files
-    base_files=$(find "$BACKUP_DIR" -type f -name "*.*" | xargs -n1 basename | sed 's/\.[0-9_]*$//' | sort -u)
+    base_files=$(find "$BACKUP_DIR" -type f -name "*.*" -print0 | xargs -0 -n1 basename | sed 's/\.[0-9_]*$//' | sort -u)
     
     local cleaned_count=0
     
