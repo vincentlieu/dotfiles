@@ -3,12 +3,10 @@ cask_args appdir: "/Applications"
 
 # taps
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 
 # formulae
-brew "asdf"
+brew "mise"
 brew "bat"
 brew "docker"
 brew "flyway"

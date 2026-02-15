@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-TOOL_VERSIONS_FILE="${HOME}/.dotfiles/asdf/.tool-versions"
+TOOL_VERSIONS_FILE="${HOME}/.dotfiles/mise/.tool-versions"
 
 # Function to get latest stable Node.js LTS version
 get_nodejs_version() {
@@ -35,24 +35,24 @@ EOF
     echo "✅ Updated $TOOL_VERSIONS_FILE"
 }
 
-# Function to install versions via asdf
+# Function to install versions via mise
 install_versions() {
-    echo "Installing updated versions via asdf..."
-    
-    if command -v asdf &> /dev/null; then
+    echo "Installing updated versions via mise..."
+
+    if command -v mise &> /dev/null; then
         echo "Installing Node.js..."
-        asdf install nodejs
-        
+        mise install nodejs
+
         echo "Installing Python..."
-        asdf install python
-        
+        mise install python
+
         echo "Setting global versions..."
-        asdf global nodejs "$(grep nodejs "$TOOL_VERSIONS_FILE" | cut -d' ' -f2)"
-        asdf global python "$(grep python "$TOOL_VERSIONS_FILE" | cut -d' ' -f2)"
-        
+        mise use -g nodejs "$(grep nodejs "$TOOL_VERSIONS_FILE" | cut -d' ' -f2)"
+        mise use -g python "$(grep python "$TOOL_VERSIONS_FILE" | cut -d' ' -f2)"
+
         echo "✅ Versions installed and set globally"
     else
-        echo "⚠️  asdf not found. Please install versions manually."
+        echo "⚠️  mise not found. Please install versions manually."
     fi
 }
 
@@ -80,12 +80,12 @@ main() {
     
     # Ask if user wants to install
     echo
-    read -p "Do you want to install these versions via asdf? (y/N): " -n 1 -r
+    read -p "Do you want to install these versions via mise? (y/N): " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         install_versions
     else
-        echo "ℹ️  To install manually, run: cd ~/.dotfiles && asdf install"
+        echo "ℹ️  To install manually, run: cd ~/.dotfiles && mise install"
     fi
     
     echo "🎉 Done!"

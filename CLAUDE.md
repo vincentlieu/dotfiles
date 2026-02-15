@@ -10,7 +10,7 @@ This is a personal dotfiles repository for macOS development environment setup. 
 
 ### Bootstrap (Initial Setup)
 ```bash
-make bootstrap          # Full setup: symlink dotfiles, install homebrew packages, setup asdf
+make bootstrap          # Full setup: symlink dotfiles, install homebrew packages
 make scripts_permissions # Fix script permissions if bootstrap fails
 ```
 
@@ -18,7 +18,6 @@ make scripts_permissions # Fix script permissions if bootstrap fails
 ```bash
 make link              # Symlink dotfiles only
 make homebrew          # Install/update homebrew and packages
-make asdf              # Setup asdf version manager and plugins
 ```
 
 ## Architecture
@@ -28,12 +27,12 @@ make asdf              # Setup asdf version manager and plugins
 - `/scripts/` - Bash scripts for setup automation
   - `link.sh` - Symlinks all dotfiles (files starting with `.`) to `$HOME`
   - `homebrew.sh` - Installs/updates Homebrew and packages from Brewfile
-  - `asdf.sh` - Installs asdf plugins (nodejs, python)
+  - `mise.sh` - Installs mise plugins (nodejs, python)
 - `/zsh/` - Zsh shell configuration
   - `.zshrc` - Main zsh configuration file
   - `config/` - Modular zsh configuration files
 - `/git/` - Git configuration files
-- `/asdf/` - asdf version manager configuration and default packages
+- `/mise/` - Tool version configuration (.tool-versions and default packages)
 
 ### Configuration System
 The dotfiles use a modular approach where:
@@ -49,7 +48,7 @@ The dotfiles use a modular approach where:
 
 ## Development Tools Included
 - **Shell**: zsh with powerlevel10k theme, autosuggestions, syntax highlighting
-- **Version Management**: asdf for nodejs and python
+- **Version Management**: mise for nodejs and python
 - **Editor**: neovim, visual-studio-code
 - **Development**: git, docker, kubernetes-cli, postgresql
 - **Utilities**: bat, jq, rg (ripgrep), tree, zoxide

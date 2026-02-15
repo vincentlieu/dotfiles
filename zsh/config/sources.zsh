@@ -17,6 +17,6 @@ if [ -e "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlightin
   source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-if [ -e "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
 fi

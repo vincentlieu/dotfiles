@@ -10,7 +10,7 @@ SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
 # shellcheck disable=SC1091
 source "$SCRIPT_DIR/backup.sh"
 
-# Symlink all dot files to the $HOME directory. i.e. .zshrc, .asdfrc etc
+# Symlink all dot files to the $HOME directory. i.e. .zshrc, .tool-versions etc
 function symlink_dotfiles() {
     if [ ! -d "$DOTFILES_DIR" ]; then
         echo "❌ Error: Dotfiles directory not found: $DOTFILES_DIR"

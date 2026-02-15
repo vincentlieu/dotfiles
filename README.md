@@ -6,7 +6,7 @@ This repository contains my personal dotfiles tailored for macOS, aiming to prov
 
 - Set up zsh shell configuration.
 - Install Homebrew and package installation with Brewfile.
-- Set up asdf, a version manager that can manage multiple language runtime versions.
+- Set up mise, a polyglot version manager that can manage multiple language runtime versions.
 
 ## Usage
 
