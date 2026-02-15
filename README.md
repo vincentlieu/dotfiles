@@ -45,13 +45,13 @@ This will check that all essential tools are installed, dotfiles are properly sy
 
 ### Updating Tool Versions
 
-Keep your development tools up to date:
+Update to the latest stable versions of Node.js and Python:
 
 ```bash
-make update-tools-versions
+mise upgrade
 ```
 
-This will check for the latest stable versions of Node.js and Python and update your `.tool-versions` file.
+The `.tool-versions` is configured to use `latest`, so this command will upgrade to the newest stable releases.
 
 ### Cleaning Up
 

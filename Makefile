@@ -1,10 +1,9 @@
 SCRIPTS_DIR := "${HOME}/.dotfiles/scripts"
 HOMEBREW_SCRIPT := "${SCRIPTS_DIR}/homebrew.sh"
 LINK_SCRIPT := "${SCRIPTS_DIR}/link.sh"
-UPDATE_VERSIONS_SCRIPT := "${SCRIPTS_DIR}/update-tools-versions.sh"
 BACKUP_SCRIPT := "${SCRIPTS_DIR}/backup.sh"
 
-.PHONY: bootstrap scripts_permissions link homebrew update-tools-versions clean backup-list backup-restore backup-clean brew-check brew-cleanup doctor
+.PHONY: bootstrap scripts_permissions link homebrew clean backup-list backup-restore backup-clean brew-check brew-cleanup doctor
 
 bootstrap:
 	@echo "[ INFO ] Bootstrapping..."
@@ -16,7 +15,6 @@ scripts_permissions:
 	@echo "[ INFO ] Setting script execute permissions..."
 	@chmod +x $(HOMEBREW_SCRIPT)
 	@chmod +x $(LINK_SCRIPT)
-	@chmod +x $(UPDATE_VERSIONS_SCRIPT)
 
 link:
 	@echo "[ INFO ] Symlinking dotfiles..."
@@ -27,11 +25,6 @@ homebrew:
 	@echo "[ INFO ] Setting up homebrew..."
 	@chmod +x $(HOMEBREW_SCRIPT)
 	@$(HOMEBREW_SCRIPT)
-
-update-tools-versions:
-	@echo "[ INFO ] Updating tool versions..."
-	@chmod +x $(UPDATE_VERSIONS_SCRIPT)
-	@$(UPDATE_VERSIONS_SCRIPT)
 
 clean:
 	@echo "[ INFO ] Cleaning broken symlinks..."
