@@ -33,6 +33,16 @@ To use these dotfiles on a new system:
 
 ## Maintenance
 
+### Health Check
+
+Verify your dotfiles setup is working correctly:
+
+```bash
+make doctor
+```
+
+This will check that all essential tools are installed, dotfiles are properly symlinked, and mise tools are configured.
+
 ### Updating Tool Versions
 
 Keep your development tools up to date:

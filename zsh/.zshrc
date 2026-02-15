@@ -3,15 +3,19 @@ export DOTFILES_ZSH="${DOTFILES}/zsh"
 export HOMEBREW_BUNDLE_FILE_GLOBAL="${DOTFILES}/homebrew/Brewfile"
 export CLICOLOR=1
 
-if [ -e "${DOTFILES_ZSH}/config/sources.zsh" ]; then 
+if [ -e "${DOTFILES_ZSH}/config/sources.zsh" ]; then
   source "${DOTFILES_ZSH}/config/sources.zsh"
 fi
 
-if [ -e "${DOTFILES_ZSH}/config/aliases.zsh" ]; then 
+if [ -e "${DOTFILES_ZSH}/config/history.zsh" ]; then
+    source "${DOTFILES_ZSH}/config/history.zsh"
+fi
+
+if [ -e "${DOTFILES_ZSH}/config/aliases.zsh" ]; then
     source "${DOTFILES_ZSH}/config/aliases.zsh"
 fi
 
-if [ -e "${DOTFILES_ZSH}/config/p10k.zsh" ]; then 
+if [ -e "${DOTFILES_ZSH}/config/p10k.zsh" ]; then
     source "${DOTFILES_ZSH}/config/p10k.zsh"
 fi
 
