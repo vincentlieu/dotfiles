@@ -1,0 +1,20 @@
+# mise configuration
+# This file configures mise behavior without specifying global tool versions.
+# Projects should define their own versions via .tool-versions or mise.toml
+
+[settings]
+# Support reading .tool-versions files from projects (asdf compatibility)
+legacy_version_file = true
+
+# Disable experimental features for stability
+experimental = false
+
+[env]
+# Global environment variables
+EDITOR = "nvim"
+VISUAL = "nvim"
+
+# Uncomment to add custom paths
+# _.path = ["$HOME/bin", "$HOME/.local/bin"]
+
+# No [tools] section - projects define their own versions

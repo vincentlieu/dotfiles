@@ -6,7 +6,7 @@ This repository contains my personal dotfiles tailored for macOS, aiming to prov
 
 - Set up zsh shell configuration.
 - Install Homebrew and package installation with Brewfile.
-- Set up mise, a polyglot version manager that can manage multiple language runtime versions.
+- Set up mise, a polyglot version manager. Uses a zero-config approach where projects define their own tool versions.
 
 ## Usage
 
@@ -43,22 +43,26 @@ make doctor
 
 This will check that all essential tools are installed, dotfiles are properly symlinked, and mise tools are configured.
 
-### Updating Tool Versions
+### Managing Tool Versions
 
-Update to the latest stable versions of Node.js and Python:
+This dotfiles uses a **zero-config approach** - no global tool versions are defined. Each project should specify its own versions via `.tool-versions` or `mise.toml`.
+
+To upgrade tools in a project:
 
 ```bash
+cd your-project
 mise upgrade
 ```
 
-The `.tool-versions` is configured to use `latest`, so this command will upgrade to the newest stable releases.
+mise is configured via `config/mise/config.toml` with sensible defaults and global environment variables.
 
-### Cleaning Up
+### Symlinking
 
-Remove broken symlinks from your home directory:
+Re-apply or remove dotfile symlinks:
 
 ```bash
-make clean
+make link              # Apply symlinks
+make unlink            # Remove symlinks
 ```
 
 ### Backup Management
