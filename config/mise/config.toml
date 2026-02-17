@@ -11,5 +11,5 @@ EDITOR = "nvim"
 VISUAL = "nvim"
 
 [tools]
-node = "latest"
+node = "lts"
 python = "latest"
