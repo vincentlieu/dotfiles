@@ -1,9 +1,7 @@
 SCRIPTS_DIR := "${HOME}/.dotfiles/scripts"
 HOMEBREW_SCRIPT := "${SCRIPTS_DIR}/homebrew.sh"
 LINK_SCRIPT := "${SCRIPTS_DIR}/link.sh"
-BACKUP_SCRIPT := "${SCRIPTS_DIR}/backup.sh"
-
-.PHONY: bootstrap scripts_permissions link unlink homebrew brew-check brew-cleanup backup-list backup-restore backup-clean doctor
+.PHONY: bootstrap scripts_permissions link unlink homebrew brew-check brew-cleanup doctor
 
 bootstrap:
 	@echo "[ INFO ] Bootstrapping..."
@@ -51,23 +49,6 @@ brew-cleanup:
 		echo "❌ Homebrew not installed"; \
 		exit 1; \
 	fi
-
-backup-list:
-	@echo "[ INFO ] Listing backup files..."
-	@chmod +x $(BACKUP_SCRIPT)
-	@$(BACKUP_SCRIPT) -c "list_backups" || (source $(BACKUP_SCRIPT) && list_backups)
-
-backup-restore:
-	@echo "[ INFO ] Interactive backup restore..."
-	@chmod +x $(BACKUP_SCRIPT)
-	@echo "Available backup files:" && ls -la ~/.dotfiles-backup/ 2>/dev/null || echo "No backups found"
-	@read -p "Enter filename to restore (without timestamp): " filename && \
-	source $(BACKUP_SCRIPT) && restore_file "$$filename"
-
-backup-clean:
-	@echo "[ INFO ] Cleaning old backup files..."
-	@chmod +x $(BACKUP_SCRIPT)
-	@source $(BACKUP_SCRIPT) && clean_old_backups 5
 
 doctor:
 	@echo "[ INFO ] Running dotfiles health check..."

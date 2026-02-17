@@ -28,7 +28,6 @@ make homebrew          # Install/update homebrew and packages
 - `/scripts/` - Bash scripts for setup automation
   - `link.sh` - Symlinks dotfiles using GNU Stow
   - `homebrew.sh` - Installs/updates Homebrew and packages from Brewfile
-  - `backup.sh` - Backup utility functions
 - `/home/` - Dotfiles symlinked to `$HOME` (via stow)
   - `.zshrc` - Main zsh configuration file
   - `.gitconfig`, `.gitignore_global` - Git configuration

@@ -65,16 +65,6 @@ make link              # Apply symlinks
 make unlink            # Remove symlinks
 ```
 
-### Backup Management
-
-Manage your dotfile backups:
-
-```bash
-make backup-list         # List all backup files
-make backup-restore      # Interactively restore a file from backup
-make backup-clean        # Remove old backup files (keeps 5 most recent)
-```
-
 ### Homebrew Management
 
 Check and maintain your Homebrew packages:
