@@ -50,7 +50,7 @@ The dotfiles use a modular approach where:
 - `HOMEBREW_PREFIX` - Set by Homebrew for package locations
 
 ## Development Tools Included
-- **Shell**: zsh with powerlevel10k theme, autosuggestions, syntax highlighting
+- **Shell**: zsh with starship prompt, autosuggestions, syntax highlighting
 - **Symlinking**: GNU Stow
 - **Version Management**: mise (zero-config, project-driven)
 - **Editor**: neovim, visual-studio-code
