@@ -1,24 +1,29 @@
-[user]
-	name = Vincent Lieu
-	email = 58590087+vincentlieu@users.noreply.github.com
-	username = vincentlieu
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[color]
-	ui = true
-[pull]
-	rebase = false
-[core]
-	excludesfile = ~/.gitignore_global
-[pager]
-	branch = false
-[branch]
-	autosetupmerge = always
-[log]
-	abbrevCommit = true
-	decorate = short
-	date = relative
 [alias]
 	co = checkout
 	br = branch
 	ci = commit
+[branch]
+	autosetupmerge = always
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+[init]
+	defaultBranch = main
+[log]
+	abbrevCommit = true
+	decorate = short
+	date = relative
+[pager]
+	branch = false
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[user]
+	name = Vincent Lieu
+	email = 58590087+vincentlieu@users.noreply.github.com
+	username = vincentlieu
