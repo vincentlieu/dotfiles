@@ -43,19 +43,6 @@ make doctor
 
 This will check that all essential tools are installed, dotfiles are properly symlinked, and mise tools are configured.
 
-### Managing Tool Versions
-
-This dotfiles uses a **zero-config approach** - no global tool versions are defined. Each project should specify its own versions via `.tool-versions` or `mise.toml`.
-
-To upgrade tools in a project:
-
-```bash
-cd your-project
-mise upgrade
-```
-
-mise is configured via `config/mise/config.toml` with sensible defaults and global environment variables.
-
 ### Symlinking
 
 Re-apply or remove dotfile symlinks:
@@ -71,7 +58,6 @@ Check and maintain your Homebrew packages:
 
 ```bash
 make brew-check          # Verify all Brewfile packages are installed
-make brew-cleanup        # Remove unused packages and clean caches
 ```
 
 ## Contributing

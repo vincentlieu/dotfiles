@@ -1,7 +1,7 @@
 SCRIPTS_DIR := "${HOME}/.dotfiles/scripts"
 HOMEBREW_SCRIPT := "${SCRIPTS_DIR}/homebrew.sh"
 LINK_SCRIPT := "${SCRIPTS_DIR}/link.sh"
-.PHONY: bootstrap scripts_permissions link unlink homebrew mise brew-check brew-cleanup doctor
+.PHONY: bootstrap scripts_permissions link unlink homebrew mise brew-check doctor
 
 bootstrap:
 	@echo "[ INFO ] Bootstrapping..."
@@ -44,17 +44,6 @@ brew-check:
 	@echo "[ INFO ] Checking Brewfile package status..."
 	@if command -v brew >/dev/null 2>&1; then \
 		brew bundle check --global --verbose; \
-	else \
-		echo "❌ Homebrew not installed"; \
-		exit 1; \
-	fi
-
-brew-cleanup:
-	@echo "[ INFO ] Cleaning up Homebrew..."
-	@if command -v brew >/dev/null 2>&1; then \
-		brew bundle cleanup --global --force; \
-		brew cleanup; \
-		brew autoremove; \
 	else \
 		echo "❌ Homebrew not installed"; \
 		exit 1; \
