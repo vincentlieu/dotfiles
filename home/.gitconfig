@@ -18,7 +18,7 @@
 [pager]
 	branch = false
 [pull]
-	rebase = false
+	rebase = true
 [push]
 	autoSetupRemote = true
 [url "ssh://git@github.com/"]
