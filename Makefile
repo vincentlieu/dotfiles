@@ -1,12 +1,13 @@
 SCRIPTS_DIR := "${HOME}/.dotfiles/scripts"
 HOMEBREW_SCRIPT := "${SCRIPTS_DIR}/homebrew.sh"
 LINK_SCRIPT := "${SCRIPTS_DIR}/link.sh"
-.PHONY: bootstrap scripts_permissions link unlink homebrew brew-check brew-cleanup doctor
+.PHONY: bootstrap scripts_permissions link unlink homebrew mise brew-check brew-cleanup doctor
 
 bootstrap:
 	@echo "[ INFO ] Bootstrapping..."
 	@$(MAKE) link
 	@$(MAKE) homebrew
+	@$(MAKE) mise
 	@echo "[ INFO ] Done!"
 
 scripts_permissions:
@@ -29,6 +30,15 @@ homebrew:
 	@echo "[ INFO ] Setting up homebrew..."
 	@chmod +x $(HOMEBREW_SCRIPT)
 	@$(HOMEBREW_SCRIPT)
+
+mise:
+	@echo "[ INFO ] Installing mise tools..."
+	@if command -v mise >/dev/null 2>&1; then \
+		mise install; \
+	else \
+		echo "❌ mise not installed"; \
+		exit 1; \
+	fi
 
 brew-check:
 	@echo "[ INFO ] Checking Brewfile package status..."
