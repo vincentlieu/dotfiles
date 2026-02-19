@@ -20,7 +20,6 @@ function install_homebrew() {
 
     if [[ $(uname -m) == 'arm64' ]]; then
         echo "🍎 Configuring Homebrew for Apple Silicon..."
-        echo "eval \$(/opt/homebrew/bin/brew shellenv)" >> "$HOME/.zprofile"
         eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
     
