@@ -1,5 +1,3 @@
-# Zsh history configuration
-
 # History file location and size
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
